@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>WeebUI - Carousel</title>
+        
+        <script type="application/javascript" src="../src/carousel.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="styles/master.css">
+        
+        <script type="application/javascript">
+            var carousel = null;
+            
+            function onLoad() {
+                carousel = document.getElementById('content-carousel');
+                carousel.current = 0;
+                setInterval(next, 2000);
+            }
+            
+            function next() {
+                if(carousel.current + 1 > 2)
+                    carousel.current = 0;
+                else
+                    carousel.current += 1;
+            }
+        </script>
+    </head>
+    <body onload="onLoad();">
+        <div class="wrapper">
+            <w-carousel id="content-carousel">
+                <w-carousel-item>
+                    <img src="images/0.jpeg">
+                </w-carousel-item>
+                <w-carousel-item>
+                    <img src="images/1.jpeg">
+                </w-carousel-item>
+                <w-carousel-item>
+                    <img src="images/2.jpeg">
+                </w-carousel-item>
+            </w-carousel>
+        </div>
+    </body>
+</html>
+
+<!-- https://www.pexels.com/photo/foggy-mountain-with-green-trees-116360/ -->
+<!-- https://www.pexels.com/photo/forest-and-water-falls-landscape-photo-168337/ -->
+<!-- https://www.pexels.com/photo/adventure-alps-climb-climbing-551851/ -->
